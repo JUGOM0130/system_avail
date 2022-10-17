@@ -1,0 +1,2 @@
+module AccountKanriHelper
+end
