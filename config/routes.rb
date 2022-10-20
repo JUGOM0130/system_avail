@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get "/" => "account_kanri#show"
   get "account/show" => "account_kanri#show"
   post "account/shori" => "account_kanri#shori"
+  post "account/reg"=>"account_kanri#reg"
+  get "test" => "account_kanri#test"
 end

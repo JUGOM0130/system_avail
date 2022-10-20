@@ -17,6 +17,11 @@ class AccountKanriController < ApplicationController
     render json: { user_name: name }, status: :ok
   end
 
+  def test
+    render "helper"
+  end
+
+
   protect_from_forgery
 
   private
