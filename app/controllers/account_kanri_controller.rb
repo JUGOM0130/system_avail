@@ -12,8 +12,9 @@ class AccountKanriController < ApplicationController
 
   def shori
     user = User.where(cd: user_watasu()[:cd])
-    get_name(user)
-    render json: { user_name: "#{(user.to_a)[0].name}" }, status: :ok
+    p "Log----------"
+    name = get_name(user)
+    render json: { user_name: name }, status: :ok
   end
 
   protect_from_forgery
@@ -24,7 +25,8 @@ class AccountKanriController < ApplicationController
     return params.require(:account_kanri).permit(:cd)
   end
 
-  def get_name
-    return
+  #名前だけ取り出す
+  def get_name(user)
+    return user.to_a[0].name
   end
 end

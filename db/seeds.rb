@@ -6,7 +6,8 @@ puts "m_shainsの削除処理"
 User.delete_all
 puts "csvを読み込みseedを実行"
 puts "読み込みファイル　db/master/name_lists_master.csv"
-CSV.foreach(".\\db\\users.csv", headers: true) do |row|
+#CSV.foreach("./db/users.csv", headers: true) do |row|    #Macの書き方
+CSV.foreach(".\\db\\users.csv", headers: true) do |row|   #windowsの書き方
   User.create!(
     cd: "#{row["cd"]}",
     name: "#{row["name"]}",
