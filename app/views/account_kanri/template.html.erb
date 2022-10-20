@@ -14,14 +14,15 @@
   <div class="row">
     <div class="col">
       <div class="mb-3">
-        <label for="id" class="form-label">ユーザCD</label>
-        <input type="text" class="form-control" id="kanrisha" placeholder="">
+        <label for="kanrisha_cd" class="form-label">ユーザCD</label>
+        <input type="text" class="form-control" id="kanrisha_cd" placeholder="" v-model:value="cd"
+          v-on:blur="get_username">
       </div>
     </div>
     <div class="col">
       <div class="mb-3">
-        <label for="id" class="form-label">ユーザ名</label>
-        <input type="text" class="form-control" id="kanrisha" placeholder="">
+        <label for="kanrisha_name" class="form-label">ユーザ名</label>
+        <input type="text" class="form-control" id="kanrisha_name" placeholder="" v-model:value="name">
       </div>
     </div>
   </div>
@@ -45,5 +46,34 @@
     <label for="biko3" class="form-label">備考3</label>
     <input type="text" class="form-control" id="biko3" placeholder="備考3">
   </div>
-
 </div>
+<script>
+  let test = new Vue({
+    el: "#app",
+    data: {
+      cd: "",
+      name: ""
+    },
+    methods: {
+      get_username: function () {
+        axios.post('shori', {cd: test.cd}).then(function (response) {
+          //非同期通信成功時
+          response.data;
+          response.status;
+          response.statusText;
+          response.headers;
+          response.config;
+          console.log(response);
+          console.log(response.data.user_name);
+          test.name = response.data.user_name
+
+        }).catch(function (error) {
+          console.log("ERR------")  
+          console.log(error)
+        }).finally(function () {
+
+        }); //送信したいデータを渡す
+      }
+    }
+  });
+</script>
