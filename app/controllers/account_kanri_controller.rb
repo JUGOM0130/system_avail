@@ -6,6 +6,7 @@ class AccountKanriController < ApplicationController
 
   def show
     @title = "一覧"
-    render "template"
+    @Users = User.all
+    render "list"
   end
 end
