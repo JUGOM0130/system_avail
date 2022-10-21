@@ -13,14 +13,20 @@ class AccountKanriController < ApplicationController
   def shori
     user = User.where(cd: user_watasu()[:cd])
     p "Log----------"
+    p get_name(user)
     name = get_name(user)
     render json: { user_name: name }, status: :ok
   end
 
   def test
+    @title = "登録：railsOnly"
+    @kinds = [["", ""], ["Slack", "1"], ["Skype", "2"], ["LINE", "3"]]
+
     render "helper"
   end
 
+  def reg
+  end
 
   protect_from_forgery
 
