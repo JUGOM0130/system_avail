@@ -10,10 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_20_035857) do
-  create_table "users", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_10_22_075610) do
+  create_table "accounts", force: :cascade do |t|
+    t.string "user_cd"
+    t.string "user_name"
+    t.string "account_id"
+    t.string "password"
+    t.string "biko1"
+    t.string "biko2"
+    t.string "biko3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "kind"
+  end
+
+  create_table "masta_users", force: :cascade do |t|
     t.string "cd"
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+  end
+
+  create_table "numbering_managements", force: :cascade do |t|
+    t.integer "index"
+    t.string "koumoku_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
