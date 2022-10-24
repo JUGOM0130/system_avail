@@ -24,6 +24,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_22_075610) do
     t.string "kind"
   end
 
+  create_table "m_shains", force: :cascade do |t|
+    t.string "cd"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "masta_users", force: :cascade do |t|
     t.string "cd"
     t.string "name"
