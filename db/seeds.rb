@@ -14,7 +14,6 @@ def user_csv_inport()
       name: "#{row["name"]}",
       first_name: "#{row["first_name"]}",
       last_name: "#{row["last_name"]}",
-
     )
   end
   puts "シード完了"

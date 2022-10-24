@@ -17,4 +17,8 @@ Rails.application.routes.draw do
   get "usermasta/show" => "masta_users#show"
   get "usermasta/delete" => "masta_users#delete"
 
+  #採番管理
+  get "saiban/show" => "numbering_managements#show"
+  get "saiban/edit/:id" => "numbering_managements#edit"
+  post "saiban/shori" => "numbering_managements#shori"
 end
