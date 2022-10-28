@@ -1,2 +1,3 @@
 class NumberingManagement < ApplicationRecord
+
 end

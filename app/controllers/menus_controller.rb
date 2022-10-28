@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-	def top
+	def index
 
 	end
 end

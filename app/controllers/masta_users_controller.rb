@@ -23,10 +23,14 @@ class MastaUsersController < ApplicationController
 
 			# valitationクリアしたら
 			if state == true
-				#採番のインクリメント
+				#採番の更新
 				saiban_no = NumberingManagement.where(koumoku_id: 'user_cd')
-				cd = saiban_no.to_a[0].index + 1
+				nowNo = saiban_no.to_a[0].index
+				cd = nowNo + 1
 				saiban_no.update(index: cd)
+
+				#ユーザに対する権限の作成＋付与
+				Kengen.create(user_cd: data["user_cd"],k_level:"0")
 				redirect_to "/usermasta/show"
 			else
 				redirect_to "/usermasta/show"

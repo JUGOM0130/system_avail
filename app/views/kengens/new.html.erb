@@ -1,0 +1,9 @@
+<h1><%= @title %></h1>
+<ul>
+    <li><a href="/usermasta/create">登録</a></li>
+    <li><a href="/usermasta/delete">全削除</a></li>
+</ul>
+<% form_with model:@kengen, url:"/kengen/create" do |f| %>
+<%= f.text_field :user_cd %>
+<%end%>
+</table>

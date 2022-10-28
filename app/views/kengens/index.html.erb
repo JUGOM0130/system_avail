@@ -1,0 +1,24 @@
+<h1><%= @title %></h1>
+<ul>
+    <li><a href="/usermasta/create">登録</a></li>
+    <li><a href="/usermasta/delete">全削除</a></li>
+</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ユーザコード</th>
+            <th scope="col">権限レベル</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @kengen.each do |d| %>
+        <tr>
+            <th scope="row"><%= "#{d.id}" %></th>
+            <td><a href="/kengen/show/<%= "#{d.user_cd}"%>"><%= "#{d.user_cd}"%></a></td>
+            <td><%= "#{}"  %></td>
+            <td><%= "#{d.k_level}" %></td>
+        </tr>
+    <%end%>
+    </tbody>
+</table>

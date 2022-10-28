@@ -1,9 +1,8 @@
+<h1 class="mt-3 mb-5"><%= @title %></h1>
+<%= form_with model:@data,url:"/saiban/update",method: :post do |f| %>
+<%= f.label :index, "Index",for:"index", class:"form-label" %>
+<%= f.number_field  :index, placeholder:"", class:"form-control",value:@data[:index],step:1%>
+<%= f.hidden_field :id, value:params[:id] %>
+<%= f.submit "update", class:"btn btn-secondary"%>
 
-    <h1 class="mt-3 mb-5"><%= @title %></h1>
-    <%= form_with url:"/saiban/shori",method: :post do |f| %>
-        <%= f.label :index, "Index",for:"index", class:"form-label" %>
-        <%= f.number_field  :index, placeholder:"", class:"form-control",value:@data[:index],step:1%>
-
-        <%= f.submit "update", class:"btn btn-secondary"%>
-
-    <% end %>
+<% end %>
