@@ -22,3 +22,9 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+Vue.jsの導入
+gemfile >> gem 'webpacker', '~> 4.0'
+npm install -g yarn
+rails webpacker:install
+rails webpacker:install:vue
