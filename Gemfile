@@ -71,4 +71,4 @@ group :test do
   gem "webdrivers"
 end
 
-gem "webpacker", "~> 4.0"
+gem "webpacker", "~> 5.0"
