@@ -1,0 +1,2 @@
+class MastaTori < ApplicationRecord
+end

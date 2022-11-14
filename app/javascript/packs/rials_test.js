@@ -1,4 +1,4 @@
-import Vue, { createApp } from "vue"   //Vueファイルのおおもと？？
+import Vue,{ createApp } from "vue"   //Vueファイルのおおもと？？
 import Test from "../test.vue"
 
 //document.addEventListener('DOMContentLoaded', () => {
