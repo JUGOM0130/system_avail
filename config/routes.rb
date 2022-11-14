@@ -32,10 +32,15 @@ Rails.application.routes.draw do
   get "kengen/new" => "kengens#new"
   patch "kengen/update" => "kengens#update"
 
-  get "torimasta/index" => "masta_toris#index"
-  get "torimasta/show" => "masta_toris#show"
-  get "torimasta/create" => "masta_toris#create"
-  get "torimasta/add" => "masta_toris#add"
-  get "torimasta/edit" => "masta_toris#edit"
-  get "torimasta/update" => "masta_toris#update"
+  #取引マスタ　これがrailsの書き方らしい
+  '''
+  get "/masta_toris"=>"masta_toris#index"
+  post "/masta_toris"=>"masta_toris#create"
+  get "/masta_toris/new"=>"masta_toris#new"
+  get "/masta_toris/:id/edit"=>"masta_toris#edit"
+  get "/masta_toris/:id"=>"masta_toris#show"
+  patch "/masta_toris/:id"=>"masta_toris#update"
+  delete "masta_toris/:id"=>"masta_toris#destroy"
+  '''
+  resources :masta_toris
 end

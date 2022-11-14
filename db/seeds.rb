@@ -24,8 +24,10 @@ end
 # 採番
 def saiban
   NumberingManagement.delete_all
-  NumberingManagement.create!(:index => 0, :koumoku_id => "user_cd")
+  NumberingManagement.create!(:index => 1, :koumoku_id => "user_cd")
   puts "#{NumberingManagement.last.inspect}"
+  NumberingManagement.create!(:index => 1, :koumoku_id => "tori_cd")
+
 end
 
 # 登録されているユーザをもとに権限を付与 デフォルトで0権限を付与
@@ -41,3 +43,4 @@ end
 
 user_csv_inport
 kengen
+saiban
