@@ -42,5 +42,7 @@ Rails.application.routes.draw do
   patch "/masta_toris/:id"=>"masta_toris#update"
   delete "masta_toris/:id"=>"masta_toris#destroy"
   '''
+
+
   resources :masta_toris
 end
