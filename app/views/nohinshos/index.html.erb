@@ -1,0 +1,52 @@
+<h1><%= @title %></h1>
+<ul>
+    <li><a href="/nohinshos/new">新規登録</a></li>
+    <li><a href="#">#</a></li>
+</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">取引先コード</th>
+            <th scope="col">日付</th>
+            <th scope="col">納品書番号</th>
+            <th scope="col">品名</th>
+            <th scope="col">数量</th>
+            <th scope="col">単価</th>
+            <th scope="col">金額</th>
+            <th scope="col">税込金額</th>
+            <th scope="col">適用</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @all.each do |d| %>
+        <tr data-href=<%= "/nohinshos/#{d.id}/edit" %>>
+            <th scope="row"><%= "#{d.id}" %></th>
+            <td><%= "#{d.tori_cd}"%></td>
+            <td><%= "#{d.ndate}"  %></td>
+            <td><%= "#{d.nno}" %></td>
+            <td><%= "#{d.nhinname}" %></td>
+            <td><%= "#{d.suryo}" %></td>
+            <td><%= "#{d.tanka}" %></td>
+            <td><%= "#{d.kingaku}" %></td>
+            <td><%= "#{d.taxingaku}" %></td>
+            <td><%= "#{d.tekiyo}" %></td>
+        </tr>
+        <%end%>
+    </tbody>
+    <script>
+        $('tr[data-href]').click(function (e) {
+            window.location = $(this).attr("data-href");
+        });
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tbody tr:hover {
+            background: gray;
+            cursor: pointer;
+        }
+    </style>
+</table>

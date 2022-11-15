@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "nohinshos/index"
   root "menus#index"
 
   #アカウント管理機能
@@ -33,16 +34,15 @@ Rails.application.routes.draw do
   patch "kengen/update" => "kengens#update"
 
   #取引マスタ　これがrailsの書き方らしい
-  '''
-  get "/masta_toris"=>"masta_toris#index"
-  post "/masta_toris"=>"masta_toris#create"
-  get "/masta_toris/new"=>"masta_toris#new"
-  get "/masta_toris/:id/edit"=>"masta_toris#edit"
-  get "/masta_toris/:id"=>"masta_toris#show"
-  patch "/masta_toris/:id"=>"masta_toris#update"
-  delete "masta_toris/:id"=>"masta_toris#destroy"
-  '''
+  get "masta_toris", to: "masta_toris#index", as: "masta_toris"
+  post "masta_toris", to: "masta_toris#create"
+  get "masta_toris/new", to: "masta_toris#new", as: "new_masta_tori"
+  get "masta_toris/:id/edit", to: "masta_toris#edit", as: "edit_masta_tori"
+  get "masta_toris/:id", to: "masta_toris#show", as: "masta_tori"
+  put "masta_toris/:id", to: "masta_toris#update"
+  patch "masta_toris/:id", to: "masta_toris#update"
+  delete "masta_toris/:id", to: "masta_toris#destroy"
+  #resources :masta_toris
 
-
-  resources :masta_toris
+  resources :nohinshos
 end

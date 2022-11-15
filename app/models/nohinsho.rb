@@ -1,0 +1,2 @@
+class Nohinsho < ApplicationRecord
+end

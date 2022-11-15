@@ -20,8 +20,8 @@
     </thead>
     <tbody>
         <% @all.each do |d| %>
-        <tr>
-            <th scope="row"><a href=<%= "/masta_toris/#{d.id}/edit" %>><%= "#{d.id}" %></a></th>
+        <tr data-href=<%= "/masta_toris/#{d.id}/edit" %>>
+            <th scope="row"><%= "#{d.id}" %></th>
             <td><%= "#{d.tcd}"%></td>
             <td><%= "#{d.tname}"  %></td>
             <td><%= "#{d.tnname}" %></td>
@@ -31,8 +31,22 @@
             <td><%= "#{d.tjusho3}" %></td>
             <td><%= "#{d.tjusho4}" %></td>
             <td><%= "#{d.tjusho5}" %></td>
-
         </tr>
         <%end%>
     </tbody>
+    <script>
+        $('tr[data-href]').click(function (e) {
+            window.location = $(this).attr("data-href");
+        });
+    </script>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        tbody tr:hover {
+            background: gray;
+            cursor: pointer;
+        }
+    </style>
 </table>

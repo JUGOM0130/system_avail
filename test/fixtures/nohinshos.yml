@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ndate: MyString
+  nno: MyString
+  nhinname: MyString
+  suryo: MyString
+  tanka: MyString
+  kingaku: MyString
+  taxingaku: MyString
+  tekiyo: MyString
+
+two:
+  ndate: MyString
+  nno: MyString
+  nhinname: MyString
+  suryo: MyString
+  tanka: MyString
+  kingaku: MyString
+  taxingaku: MyString
+  tekiyo: MyString

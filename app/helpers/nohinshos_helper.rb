@@ -1,0 +1,2 @@
+module NohinshosHelper
+end
