@@ -23,7 +23,7 @@
         <tr data-href=<%= "/nohinshos/#{d.id}/edit" %>>
             <th scope="row"><%= "#{d.id}" %></th>
             <td><%= "#{d.tori_cd}"%></td>
-            <td><%= "#{d.ndate}"  %></td>
+            <td><%= "#{d.ndate.strftime("%Y-%m-%d")}"  %></td>
             <td><%= "#{d.nno}" %></td>
             <td><%= "#{d.nhinname}" %></td>
             <td><%= "#{d.suryo}" %></td>
